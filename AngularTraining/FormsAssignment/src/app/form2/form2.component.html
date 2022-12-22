@@ -1,0 +1,57 @@
+<div class="container">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="projectName" class="form-label">Project Name</label>
+      <input type="text" class="form-control" id="projectName" placeholder="Enter project Name" formControlName="projectName" required>
+      <div style="color: red;" *ngIf="formGroup.controls['projectName'].touched && formGroup.controls['projectName'].invalid">
+      <span *ngIf="formGroup.controls['projectName'].hasError('required')">Project name is required</span>
+      <span *ngIf="formGroup.controls['projectName'].hasError('pattern')">Project name is required</span>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
+        <div style="color: red;" *ngIf="formGroup.controls['email'].touched && formGroup.controls['email'].invalid">
+          <span *ngIf="formGroup.controls['email'].hasError('required')">Email is required</span>
+          <span *ngIf="formGroup.controls['email'].hasError('email')">Inavlid email</span>
+      </div>
+      </div>
+    <div class="mb-3">
+        <label for="projectStatus" class="form-label">Project Status</label>
+        <select class="form-select" aria-label="Default select example" formControlName="projectStatus" placeholder="choose..." required>
+          <option value="Stable">Stable</option>
+          <option value="Critical">Critical</option>
+          <option value="Finished">Finished</option>
+        </select>
+        <div style="color: red;" *ngIf="formGroup.controls['projectStatus'].touched && formGroup.controls['projectStatus'].invalid">
+          <span *ngIf="formGroup.controls['projectStatus'].hasError('required')">Status is required</span>
+      </div>
+      </div>
+    <div>
+      <input class="btn btn-primary" type="submit" value="submit">
+      </div>
+  </form>
+</div>
+<!-- <br>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Subscription</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{frm.email}}</td>
+        <td>{{frm.subscription}}</td>
+        <td>{{frm.password}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+  
+
+

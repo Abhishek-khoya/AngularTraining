@@ -1,0 +1,55 @@
+<div class="container">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
+      <div style="color: red;" *ngIf="formGroup.controls['email'].touched && formGroup.controls['email'].invalid">
+        <span *ngIf="formGroup.controls['email'].hasError('required')">Email is required</span>
+        <span *ngIf="formGroup.controls['email'].hasError('email')">Inavlid email</span>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="subscription" class="form-label">Subscription</label>
+      <select class="form-select" aria-label="Default select example" formControlName="subscription" placeholder="choose..." required>
+        <option value="Basic">Basic</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Pro">Pro</option>
+      </select>
+      <div style="color: red;" *ngIf="formGroup.controls['subscription'].touched && formGroup.controls['subscription'].invalid">
+        <span *ngIf="formGroup.controls['subscription'].hasError('required')">subscription is required</span>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="paswd" class="form-label">Password</label>
+      <input type="password" class="form-control" id="paswd" placeholder="Enter password" formControlName="password" required>
+      <div style="color: red;" *ngIf="formGroup.controls['password'].touched && formGroup.controls['password'].invalid">
+      <span *ngIf="formGroup.controls['password'].hasError('required')">Password is required</span>
+      </div>
+    </div>
+    <div>
+      <input class="btn btn-primary" type="submit" value="submit">
+      </div>
+  </form>
+</div>
+<br>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Subscription</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{frm.email}}</td>
+        <td>{{frm.subscription}}</td>
+        <td>{{frm.password}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  
+
