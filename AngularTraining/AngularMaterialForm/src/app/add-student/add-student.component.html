@@ -1,0 +1,74 @@
+<div class="form">
+    <h1>Student Registration Form</h1>
+    <form [formGroup]="studentForm">
+        <mat-form-field class="example-name">
+            <mat-label>Student Name</mat-label>
+            <input matInput formControlName="name"><mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="studentForm.controls['name'].hasError('required')">Name is required</mat-error>
+                <mat-error *ngIf="studentForm.controls['name'].hasError('pattern')">Only Alphabate with
+                    space between 2 to 20 charecters
+                </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="phoneNumber" type="number"><mat-icon matSuffix>dialpad</mat-icon>
+            <mat-error *ngIf="studentForm.controls['phoneNumber'].hasError('required')">Phone Number required</mat-error>
+            <mat-error *ngIf="studentForm.controls['phoneNumber'].hasError('pattern')">&nbsp;Please enter 10 Digit Phone Number</mat-error>
+        </mat-form-field>
+        
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email"><mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="studentForm.controls['email'].hasError('email')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="studentForm.controls['email'].hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="studentForm.controls['password'].hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="studentForm.controls['password'].hasError('maxlength')">Use 12 digit Password</mat-error>
+            <mat-error *ngIf="studentForm.controls['password'].hasError('minlength')">Use 6 digit Password</mat-error>
+          </mat-form-field>
+          <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="studentForm.controls['dateOfBirth'].hasError('required')">Date of Birth is required</mat-error>
+        </mat-form-field>&nbsp;
+        <mat-form-field appearance="fill">
+            <mat-label>Skills</mat-label><mat-icon matSuffix>work</mat-icon>
+            <mat-select formControlName="skills">
+              <mat-option value="Angular Basic">
+                Angular Basics
+              </mat-option>
+              <mat-option value="Angular Intermediate">
+                Angular Intermediate
+              </mat-option>
+              <mat-option value="Angular Advanced">
+                Angular Advanced
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="studentForm.controls['skills'].hasError('required')">Skills is required</mat-error>
+          </mat-form-field><br>
+          <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-label>Gender</mat-label>
+            <mat-radio-button value="M">Male</mat-radio-button><mat-icon matSuffix>male</mat-icon>
+            <mat-radio-button value="F">Female</mat-radio-button><mat-icon matSuffix>female</mat-icon>
+            <mat-error *ngIf="studentForm.controls['gender'].hasError('required')">Gender is required</mat-error>
+          </mat-radio-group><br><br>
+        <button mat-raised-button color="primary" (click)="addStudent()">Register</button>
+    </form>
+</div>
