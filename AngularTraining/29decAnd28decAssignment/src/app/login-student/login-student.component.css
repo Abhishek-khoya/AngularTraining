@@ -1,0 +1,11 @@
+.form
+{
+    background-color:whitesmoke;
+    margin-top: 3%;
+    margin-left: 40%;
+    height: auto;
+    width: 20%;
+    padding: 30px;
+    border-radius: 5%;
+    box-shadow: 6px 6px 6px 6px #ccc;
+}

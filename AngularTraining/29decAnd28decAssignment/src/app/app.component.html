@@ -1,0 +1,74 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+      <a mat-list-item routerLink="add/course">
+        <span>Add New Course</span>
+      </a>
+      <a mat-list-item routerLink="courses"> 
+        <span>Course List</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a mat-button [matMenuTriggerFor]="dropdown">
+      <mat-icon>expand_more</mat-icon>Menu
+    </a>
+    <mat-menu #dropdown>
+      <button mat-menu-item routerLink="">Home</button>
+      <button mat-menu-item routerLink="login">Login</button>
+      <button mat-menu-item routerLink="register">Registration</button>
+      <button mat-menu-item routerLink="aboutUs">About Us</button>
+    </mat-menu>
+    <a mat-button [matMenuTriggerFor]="dropdown1">
+      <mat-icon>explore</mat-icon>About Us<mat-icon>expand_more</mat-icon>
+    </a>
+    <mat-menu #dropdown1>
+      <button mat-menu-item routerLink="">CEO Message</button>
+      <button mat-menu-item routerLink="">Contact Us</button>
+    </mat-menu>&nbsp;
+    <button mat-raised-button color="warn" (click)="openDialog()">Open Dialog</button>
+    <span class="example-spacer"></span>
+    <span>Student Management Portal</span>
+  </mat-toolbar> 
+<router-outlet></router-outlet>
+<h2>Indeterminate</h2>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar><br>
+<mat-divider></mat-divider>
+<h2>Determinate</h2>
+<mat-progress-bar mode="determinate" value="50"></mat-progress-bar><br>
+<mat-divider></mat-divider>
+<h2>Buffer Mode</h2>
+<mat-progress-bar mode="buffer"></mat-progress-bar><br>
+<mat-divider></mat-divider>
+<h2>Query</h2>
+<mat-progress-bar mode="query"></mat-progress-bar><br>
+<mat-divider></mat-divider>
+<mat-form-field class="example-chip-list" appearance="fill">
+  <mat-label>Hobbies</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Enter fruits">
+    <mat-chip-row *ngFor="let hobby of hobbies"
+                  (removed)="remove(hobby)"
+                  [editable]="true"
+                  (edited)="edit(hobby, $event)">
+      {{hobby.name}}
+      <button matChipRemove [attr.aria-label]="'remove ' + hobby">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+    <input placeholder="New Hobby..."
+           [matChipInputFor]="chipGrid"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)"/>
+  </mat-chip-grid>
+</mat-form-field>
+<mat-chip-listbox aria-label="Hobby selection">
+  <mat-chip-option *ngFor="let chip of hobbies">{{chip.name}}</mat-chip-option>
+</mat-chip-listbox>
+<mat-chip-listbox aria-label="Hobby selection">
+  <mat-chip-option *ngFor="let chip of colorHobbies" selected [color]="chip.color">{{chip.name}}</mat-chip-option>
+</mat-chip-listbox>
+</mat-sidenav-container> 

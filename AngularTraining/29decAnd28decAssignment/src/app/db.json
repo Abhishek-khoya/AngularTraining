@@ -1,0 +1,166 @@
+{
+  "Students": [
+    {
+      "name": "Abhishek Khoya",
+      "phoneNumber": 7089499355,
+      "email": "abhishekkhoya786@gmail.com",
+      "password": "",
+      "dateOfBirth": "2022-12-20T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 1
+    },
+    {
+      "name": "Vikrant Tiwari",
+      "phoneNumber": 8900987665,
+      "email": "vikrant@gmail.com",
+      "password": "123213",
+      "dateOfBirth": "2022-12-28T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Advanced",
+      "id": 2
+    },
+    {
+      "name": "Pratik Khoya",
+      "phoneNumber": 8987656543,
+      "email": "pratik@gmail.com",
+      "password": "ujik1234",
+      "dateOfBirth": "2022-12-27T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Basic",
+      "id": 3
+    },
+    {
+      "name": "Neelmani",
+      "phoneNumber": 7890123456,
+      "email": "neelmani@gmail.com",
+      "password": "neel1234",
+      "dateOfBirth": "2022-12-28T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 4
+    },
+    {
+      "name": "Kamlesh",
+      "phoneNumber": 6789987600,
+      "email": "kamlesh@gmail.com",
+      "password": "890723",
+      "dateOfBirth": "2022-12-03T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 5
+    },
+    {
+      "name": "Kamlesh",
+      "phoneNumber": 6789987600,
+      "email": "kamlesh@gmail.com",
+      "password": "890723",
+      "dateOfBirth": "2022-12-03T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 6
+    },
+    {
+      "name": "Teena",
+      "phoneNumber": 5678876549,
+      "email": "teena@gmail.com",
+      "password": "teena12",
+      "dateOfBirth": "2022-11-30T18:30:00.000Z",
+      "gender": "F",
+      "skills": "Angular Intermediate",
+      "id": 7
+    },
+    {
+      "name": "Nitin Kumawat",
+      "phoneNumber": 7865432190,
+      "email": "nitin@gmail.com",
+      "userName": "Nitin1234",
+      "password": "Nitin@1234",
+      "dateOfBirth": "2022-12-25T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Basic",
+      "id": 8
+    },
+    {
+      "name": "Piyush Patel",
+      "phoneNumber": 8976512345,
+      "email": "piyush@gmail.com",
+      "userName": "piyush1234",
+      "password": "piyush@1234",
+      "dateOfBirth": "1999-06-14T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 9
+    },
+    {
+      "name": "Nikhil",
+      "phoneNumber": 7876543211,
+      "email": "nikhil@gmail.com",
+      "userName": "nikhil123",
+      "password": "nikhil@1234",
+      "dateOfBirth": "2022-12-27T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Advanced",
+      "id": 10
+    }
+  ],
+  "Login": [
+    {
+      "userName": "Abhishek",
+      "password": "1234qwer",
+      "id": 1
+    },
+    {
+      "userName": "Abhishek",
+      "password": "Khoya1234",
+      "id": 2
+    },
+    {
+      "userName": "Abhishek",
+      "password": "Khoya1234",
+      "id": 3
+    },
+    {
+      "userName": "Vikram",
+      "password": "1234qwert",
+      "id": 4
+    },
+    {
+      "userName": "Abhishek",
+      "password": "123123123",
+      "id": 5
+    },
+    {
+      "userName": "Abhishek",
+      "password": "1234qwert",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "Abhishek",
+      "phoneNumber": 7089499355,
+      "email": "abhishekkhoya786@gmail.com",
+      "password": "asdadsad",
+      "dateOfBirth": "2022-12-28T18:30:00.000Z",
+      "gender": "M",
+      "skills": "Angular Intermediate",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
