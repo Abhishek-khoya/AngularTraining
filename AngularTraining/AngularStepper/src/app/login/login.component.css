@@ -1,0 +1,17 @@
+  .example-name {
+    width: 70%;
+  }
+.form
+{
+    background-color:whitesmoke;
+    /* margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto; */
+    margin: auto;
+    height: auto;
+    width: 30%;
+    padding: 30px;
+    border-radius: 5%;
+    box-shadow: 6px 6px 6px 6px #ccc;
+}

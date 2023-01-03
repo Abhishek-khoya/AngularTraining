@@ -1,0 +1,170 @@
+<div class="container">
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Basic Information &nbsp; <mat-icon style="float: right;">info</mat-icon></ng-template>
+            <br>
+            <mat-form-field class="example-name">
+                <mat-label>Student's Name</mat-label>
+                <input matInput formControlName="name"><mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="firstFormGroup.controls['name'].hasError('required')">Student's Name is
+                    required</mat-error>
+                <mat-error *ngIf="firstFormGroup.controls['name'].hasError('pattern')">Only Alphabate with
+                    space between 2 to 20 charecters
+                </mat-error>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="example-name">
+                <mat-label>Father's Name</mat-label>
+                <input matInput formControlName="fatherName"><mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="firstFormGroup.controls['fatherName'].hasError('required')">Father's name is
+                    required</mat-error>
+                <mat-error *ngIf="firstFormGroup.controls['fatherName'].hasError('pattern')">Only Alphabate with
+                    space between 2 to 20 charecters
+                </mat-error>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="example-name">
+                <mat-label>Mother's Name</mat-label>
+                <input matInput formControlName="motherName"><mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="firstFormGroup.controls['motherName'].hasError('required')">Mother's name is
+                    required</mat-error>
+                <mat-error *ngIf="firstFormGroup.controls['motherName'].hasError('pattern')">Only Alphabate with
+                    space between 2 to 20 charecters
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput formControlName="phoneNumber" type="number"><mat-icon matSuffix>dialpad</mat-icon>
+                <mat-error *ngIf="firstFormGroup.controls['phoneNumber'].hasError('required')">Phone Number
+                    required</mat-error>
+                    <mat-error *ngIf="firstFormGroup.controls['phoneNumber'].hasError('pattern')">&nbsp;Please enter 10
+                        Digit Phone Number</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email"><mat-icon matSuffix>email</mat-icon>
+                        <mat-error *ngIf="firstFormGroup.controls['email'].hasError('email')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="firstFormGroup.controls['email'].hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="firstFormGroup.controls['dateOfBirth'].hasError('required')">Date of Birth is
+                    required</mat-error>
+            </mat-form-field>&nbsp;
+            <br>
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label>Gender</mat-label>
+                <mat-radio-button value="M">Male</mat-radio-button><mat-icon matSuffix>male</mat-icon>
+                <mat-radio-button value="F">Female</mat-radio-button><mat-icon matSuffix>female</mat-icon>
+                <mat-error *ngIf="firstFormGroup.controls['gender'].hasError('required')">Gender is required</mat-error>
+            </mat-radio-group><br>
+            <div>
+                <button mat-raised-button color="accent" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" optional>
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Bank Details &nbsp;<mat-icon style="float: right;" matSuffix>account_balance</mat-icon> </ng-template>
+            <br>
+            <mat-form-field class="example-name">
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="fullName"><mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="secondFormGroup.controls['fullName'].hasError('required')">Full Name is
+                    required</mat-error>
+                <mat-error *ngIf="secondFormGroup.controls['fullName'].hasError('pattern')">Only Alphabate with
+                    space between 2 to 20 charecters
+                </mat-error>
+            </mat-form-field>&nbsp;
+            <mat-form-field class="example-name">
+                <mat-label>Bank Name</mat-label>
+                <input matInput formControlName="bankName"><mat-icon matSuffix>account_balance</mat-icon>
+                <mat-error *ngIf="secondFormGroup.controls['bankName'].hasError('required')">Bank Name is
+                    required</mat-error>
+                </mat-form-field><br>
+            <mat-form-field class="example-name">
+                <mat-label>Account Number</mat-label>
+                <input matInput type="number" formControlName="accNo">
+                <mat-error *ngIf="secondFormGroup.controls['accNo'].hasError('required')">Account number is
+                    required</mat-error>
+                    <mat-error *ngIf="secondFormGroup.controls['accNo'].hasError('pattern')">Only number is
+                        allowed</mat-error>
+                    </mat-form-field>&nbsp;
+            <mat-form-field class="example-name">
+                <mat-label>IFSC Code</mat-label>
+                <input matInput formControlName="ifscCode">
+                <mat-error *ngIf="secondFormGroup.controls['ifscCode'].hasError('required')">IFSC Code is
+                    required</mat-error>
+            </mat-form-field><br>
+            <mat-radio-group aria-label="Select an option" formControlName="mobileBanking">
+                <mat-label>Mobile Banking</mat-label>
+                <mat-radio-button value="Yes">Yes</mat-radio-button><mat-icon matSuffix>yes</mat-icon>
+                <mat-radio-button value="No">No</mat-radio-button><mat-icon matSuffix>no</mat-icon>
+                <mat-error *ngIf="secondFormGroup.controls['mobileBanking'].hasError('required')">Mobile Banking is
+                    required</mat-error>
+            </mat-radio-group><br>
+            <mat-radio-group aria-label="Select an option" formControlName="netBanking">
+                <mat-label>Net Banking</mat-label>
+                <mat-radio-button value="Yes">Yes</mat-radio-button><mat-icon matSuffix>yes</mat-icon>
+                <mat-radio-button value="No">No</mat-radio-button><mat-icon matSuffix>no</mat-icon>
+                <mat-error *ngIf="secondFormGroup.controls['netBanking'].hasError('required')">Net Banking is
+                    required</mat-error>
+            </mat-radio-group><br>
+            <div>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;
+                <button mat-raised-button color="accent" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Communication Address &nbsp; <mat-icon style="float: right;"> location_on</mat-icon></ng-template>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Present Address</mat-label>
+                <textarea matInput formControlName="presentAddress" placeholder="Ex. Route - 66 California"></textarea><mat-icon matSuffix> location_on</mat-icon>
+                <span id="wordCount">{{ words }}</span>
+                <mat-error *ngIf="thirdFormGroup.controls['presentAddress'].hasError('required')">Present Address is required</mat-error>
+                <mat-error *ngIf="thirdFormGroup.controls['presentAddress'].hasError('maxlength')">&nbsp;Please enter 60
+                    characters address</mat-error>
+                <mat-error *ngIf="thirdFormGroup.controls['presentAddress'].hasError('minlength')">&nbsp;Please enter 10
+                    characters address</mat-error>
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Permanent Address</mat-label>
+                <textarea matInput formControlName="permanentAddress" placeholder="Ex. Route - 66 California"></textarea><mat-icon matSuffix> my_location</mat-icon>
+                <mat-error *ngIf="thirdFormGroup.controls['permanentAddress'].hasError('required')">Permanent Address is required</mat-error>
+                <mat-error *ngIf="thirdFormGroup.controls['permanentAddress'].hasError('maxlength')">&nbsp;Please enter 60
+                    characters address</mat-error>
+                <mat-error *ngIf="thirdFormGroup.controls['permanentAddress'].hasError('minlength')">&nbsp;Please enter 10
+                    characters address</mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button>&nbsp;
+                <button mat-raised-button color="accent" matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done &nbsp; <mat-icon style="float:right">check_circle</mat-icon></ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-raised-button color="primary" (click)="registerStudent()">Submit</button>&nbsp;
+            <button mat-raised-button color="accent" matStepperPrevious>Back</button>&nbsp;
+            <button mat-raised-button color="warn" (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-stepper>
+</div>
