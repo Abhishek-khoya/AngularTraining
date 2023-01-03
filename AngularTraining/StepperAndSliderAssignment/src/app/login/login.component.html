@@ -1,0 +1,36 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loginSuccess"></mat-progress-bar>
+<div class="form">
+    <h1 style="margin-left:110px">Student Login Form</h1>
+    <div class="loginHeader" color="primary">
+        <mat-icon style="margin-left:200px">account_circle</mat-icon>
+    </div>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="loginStudent()">
+        <mat-form-field class="example-name">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="userName" autocomplete="off"><mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="loginForm.controls['userName'].hasError('required')">User Name is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['userName'].hasError('maxlength')">You can use only 32 characters
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['userName'].hasError('minlength')">Use 6 digit User Name</mat-error>
+            <mat-error *ngIf="loginForm.controls['userName'].hasError('pattern')">Only Alphabate and Numbers</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="example-name">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('maxlength')">Use 12 digit Password</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">Use 6 digit Password</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('pattern')"></mat-error>
+        </mat-form-field><br>
+        <div>
+            <button mat-raised-button color="primary" type="submit" >Login</button>&nbsp;
+            <a mat-raised-button routerLink="/register">Sign Up</a>
+        </div>
+    </form>
+</div>
